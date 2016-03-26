@@ -13,7 +13,9 @@ module GNF
       @driver.find_element(:name, 'eqMgrCd').send_key(code)
       @driver.find_element(:name, 'searchButton').click
       sleep(0.2)
-      @driver.find_element(:name, 'detail_button').click
+      detail_button = @driver.find_element(:name, 'detail_button')
+      return if detail_button.nil?
+      detail_button.click
       sleep(0.1)
       name = @driver.find_element(:xpath, '//div[@class="boxOptListed05"]/h3').text
       name = name.zen_to_han.gsub('（株）', '').gsub(/ホールディングス$/, '')
