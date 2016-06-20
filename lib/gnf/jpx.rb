@@ -39,11 +39,12 @@ module GNF
       @driver.find_element(:xpath, "//input[@value='情報を閲覧する場合はこちら']").click
       @driver.find_elements(:xpath, "//td[@class='NormalBody']/table/tbody/tr")[2..-1].map do |row|
         disclosure_row_to_hash(row)
-      end
+      end.compact
     end
 
     def disclosure_row_to_hash(row)
       values = row.find_elements(:xpath, 'td')
+      return if values[0].nil? || values[0].text.empty?
       time = Date.parse(values[0].text)
       title = values[1].text.zen_to_han
       pdf = File.basename(values[1].find_element(:xpath, 'div/div/a').attribute(:href))
