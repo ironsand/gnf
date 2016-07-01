@@ -1,6 +1,7 @@
 require 'selenium-webdriver'
 require 'moji'
-require_relative 'zen_to_han'
+require 'fe_core_ext'
+
 
 module GNF
   class JPX
