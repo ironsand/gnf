@@ -2,7 +2,6 @@ require 'selenium-webdriver'
 require 'moji'
 require 'fe_core_ext'
 
-
 module GNF
   class JPX
     def initialize(driver: :phantomjs)

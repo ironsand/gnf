@@ -32,4 +32,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rspec'
   spec.add_dependency 'selenium-webdriver'
   spec.add_dependency 'fe_core_ext'
+  spec.add_dependency 'moji'
 end
